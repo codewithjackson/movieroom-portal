@@ -68,10 +68,26 @@ export default function InteractivePhoneMockup() {
   const [volume, setVolume] = useState(80)
   const [currentTime, setCurrentTime] = useState(120)
   const [totalTime] = useState(360)
-  const [currentDate] = useState<string>(new Date().toLocaleTimeString([], { 
-    hour: '2-digit', 
-    minute: '2-digit' 
-  }))
+  const [currentDate, setCurrentDate] = useState<string>('')
+  
+  useEffect(() => {
+    // Set current date only on client side to avoid hydration mismatch
+    setCurrentDate(new Date().toLocaleTimeString([], { 
+      hour: '2-digit', 
+      minute: '2-digit' 
+    }))
+    
+    // Update time every minute
+    const interval = setInterval(() => {
+      setCurrentDate(new Date().toLocaleTimeString([], { 
+        hour: '2-digit', 
+        minute: '2-digit' 
+      }))
+    }, 60000)
+    
+    return () => clearInterval(interval)
+  }, [])
+
   const autoplayRef = useRef<number | null>(null)
 
   const nextScreenshot = () => {
@@ -162,7 +178,7 @@ export default function InteractivePhoneMockup() {
   return (
     <>
       {/* Phone Mockup */}
-      <div className="relative w-72 md:w-80 lg:w-96">
+      <div className="relative w-80 sm:w-96 md:w-[28rem] lg:w-96">
         {/* Phone Frame with Glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-[3rem] border-[12px] border-gray-900 shadow-2xl shadow-primary/20" />
         
