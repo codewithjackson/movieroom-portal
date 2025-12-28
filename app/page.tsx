@@ -6,6 +6,43 @@ import Navbar from '@/app/components/layout/Navbar'
 import Footer from '@/app/components/layout/Footer'
 import InteractivePhoneMockup from '@/app/components/ui/InteractivePhoneMockup'
 
+// JSON-LD structured data for SEO
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'MovieRoom Premium',
+  description: 'Free Android movie streaming app with 4K quality, offline downloads, and 10M+ happy users. Safe, virus-free, no registration required.',
+  applicationCategory: 'EntertainmentApplication',
+  operatingSystem: 'Android',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock'
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    ratingCount: '10000000',
+    bestRating: '5',
+    worstRating: '1'
+  },
+  downloadUrl: 'https://movieroom-portal.vercel.app/downloads/movieroom-v2.5.1.apk',
+  fileFormat: 'application/vnd.android.package-archive',
+  fileSize: '85 MB',
+  version: '2.5.1',
+  datePublished: '2024-12-15',
+  author: {
+    '@type': 'Organization',
+    name: 'MovieRoom Official'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'MovieRoom Official'
+  },
+  keywords: 'movie streaming, android app, free movies, APK download, entertainment, cinema, films'
+}
+
 export default function Home() {
   const appVersions = [
     { version: 'v2.5.1', size: '85 MB', date: 'Dec 15, 2024', new: true },
@@ -58,7 +95,14 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-surface/50">
+    <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-b from-background via-background to-surface/50">
       <Navbar />
       
       {/* Hero Section - MOBILE OPTIMIZED */}
@@ -359,6 +403,7 @@ export default function Home() {
       </section>
       
       <Footer />
-    </div>
+      </div>
+    </>
   )
 }
