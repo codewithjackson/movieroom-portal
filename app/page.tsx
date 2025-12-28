@@ -115,13 +115,13 @@ export default function Home() {
             {/* Left Content - Mobile centered, desktop left-aligned */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               {/* Badge - Smaller on mobile */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/20 mb-4 md:mb-6">
-                <Download className="w-3 h-3 md:w-4 md:h-4 text-primary" />
-                <span className="text-xs md:text-sm font-medium text-primary">Direct Download Available</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-full bg-primary/10 border border-primary/20 mb-6 md:mb-8">
+                <Download className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-primary" />
+                <span className="text-sm sm:text-sm md:text-base font-medium text-primary">Direct Download Available</span>
               </div>
               
               {/* Main Heading - Responsive sizes */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-8">
                 Download MovieRoom
                 <span className="block bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent mt-2">
                   App for Android
@@ -129,7 +129,7 @@ export default function Home() {
               </h1>
               
               {/* Subtitle - Responsive text */}
-              <p className="text-base sm:text-lg md:text-xl text-text-muted mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg md:text-xl text-text-muted mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0">
                 Get the official MovieRoom APK directly from our website. 
                 Stream thousands of movies and TV shows in stunning quality. 
                 No Play Store required.
@@ -140,37 +140,37 @@ export default function Home() {
                 <a
                   href="/downloads/movieroom-v2.5.1.apk"
                   download="MovieRoom-v2.5.1.apk"
-                  className="group inline-flex items-center justify-center gap-2 md:gap-3 px-6 py-4 md:px-8 md:py-5 rounded-xl md:rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-base md:text-lg hover:shadow-xl md:hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 active:scale-95 w-full sm:w-auto touch-manipulation"
+                  className="group inline-flex items-center justify-center gap-2 sm:gap-3 md:gap-4 px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 rounded-xl md:rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-base sm:text-lg md:text-xl hover:shadow-xl md:hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 active:scale-95 w-full sm:w-auto touch-manipulation"
                 >
                   <Download className="w-5 h-5 md:w-6 md:h-6 group-hover:animate-bounce" />
                   <span>Download MovieRoom v2.5.1</span>
                   <ArrowDown className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-0.5 md:group-hover:translate-y-1 transition-transform" />
                 </a>
-                <p className="text-xs md:text-sm text-text-muted mt-2">
+                <p className="text-sm sm:text-base md:text-lg text-text-muted mt-2">
                   85 MB • Latest Version • Android 8.0+
                 </p>
               </div>
               
               {/* App Stats - Mobile optimized */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 md:gap-10">
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-white">4.9★</div>
-                  <div className="text-xs md:text-sm text-text-muted">User Rating</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">4.9★</div>
+                  <div className="text-sm sm:text-base md:text-lg text-text-muted">User Rating</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-white">10M+</div>
-                  <div className="text-xs md:text-sm text-text-muted">Downloads</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">10M+</div>
+                  <div className="text-sm sm:text-base md:text-lg text-text-muted">Downloads</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-white">Safe</div>
-                  <div className="text-xs md:text-sm text-text-muted">Virus Free</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Safe</div>
+                  <div className="text-sm sm:text-base md:text-lg text-text-muted">Virus Free</div>
                 </div>
               </div>
             </div>
             
             {/* Right - Phone Mockup - Responsive sizing */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-sm">
+            <div className="w-full lg:w-1/2 flex justify-center items-center mt-8 lg:mt-0 lg:justify-end px-4">
+              <div className="relative w-full max-w-[420px] sm:max-w-[450px] md:max-w-xl lg:max-w-sm mx-auto lg:mx-0">
                 <InteractivePhoneMockup />
                 {/* Floating Download Badge - Hidden on very small screens */}
                 <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 border border-white/10 backdrop-blur-sm flex items-center justify-center animate-pulse">
