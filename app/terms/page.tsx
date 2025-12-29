@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Shield, Users, Data, AlertTriangle, Mail } from 'lucide-react'
+import { Shield, Users, Database, AlertTriangle, Mail } from 'lucide-react'
 
 const TermsOfService = () => {
   return (
@@ -24,7 +24,7 @@ const TermsOfService = () => {
             <span className="font-medium">Our Services</span>
           </Link>
           <Link href="#data" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-text-muted hover:bg-white/10 hover:text-white transition-colors">
-            <Data className="w-4 h-4" />
+            <Database className="w-4 h-4" />
             <span className="font-medium">Data & Privacy</span>
           </Link>
           <Link href="#conduct" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-text-muted hover:bg-white/10 hover:text-white transition-colors">
@@ -83,7 +83,7 @@ const TermsOfService = () => {
           {/* Data & Privacy */}
           <section id="data" className="bg-surface/50 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <Data className="w-6 h-6 text-primary" />
+              <Database className="w-6 h-6 text-primary" />
               Data & Privacy
             </h2>
             <div className="space-y-4 text-text-muted leading-relaxed">
