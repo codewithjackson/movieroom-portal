@@ -13,7 +13,8 @@ import {
   Shield,
   Zap,
   Users,
-  Sparkles
+  Sparkles,
+  MessageCircle
 } from 'lucide-react'
 
 const Footer = () => {
@@ -164,30 +165,32 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Subscription */}
-        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl border border-primary/20 p-8 mb-12">
+        {/* WhatsApp Channel Subscription */}
+        <div className="bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-2xl border border-green-500/20 p-8 mb-12">
           <div className="max-w-2xl mx-auto text-center">
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg shadow-green-500/25">
+                <MessageCircle className="w-8 h-8 text-white" />
+              </div>
+            </div>
             <h3 className="text-2xl font-bold text-white mb-3">
-              Stay in the Loop
+              Join Our WhatsApp Channel
             </h3>
             <p className="text-text-muted mb-6">
-              Subscribe to our newsletter for the latest movie releases, updates, and exclusive offers.
+              Get exclusive movie recommendations, latest updates, and join our community of movie lovers. 
+              Never miss out on new releases and special offers!
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-primary/50"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105"
-              >
-                Subscribe
-              </button>
-            </form>
+            <a
+              href="https://whatsapp.com/channel/0029VbC8vSh2ZjCmnwNbuc0s"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white font-bold hover:shadow-md hover:shadow-green-500/20 transition-all duration-300 hover:scale-102"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Join WhatsApp Channel
+            </a>
             <p className="text-xs text-text-muted mt-4">
-              By subscribing, you agree to our Privacy Policy and consent to receive updates.
+              By joining, you'll get instant updates on new movies and exclusive content recommendations.
             </p>
           </div>
         </div>
@@ -196,23 +199,24 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2 text-text-muted text-sm">
-              <span>© {currentYear} MovieRoom. All rights reserved.</span>
+              <span>  {currentYear} MovieRoom. All rights reserved.</span>
+              <span> {currentYear} MovieRoom. All rights reserved.</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
             </div>
             
             <div className="flex flex-wrap items-center gap-6 text-sm">
-              <Link href="/privacy" className="text-text-muted hover:text-white transition-colors">
+              <span className="text-text-muted cursor-not-allowed opacity-60">
                 Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-text-muted hover:text-white transition-colors">
+              </span>
+              <span className="text-text-muted cursor-not-allowed opacity-60">
                 Terms of Service
-              </Link>
-              <Link href="/cookies" className="text-text-muted hover:text-white transition-colors">
+              </span>
+              <span className="text-text-muted cursor-not-allowed opacity-60">
                 Cookie Policy
-              </Link>
-              <Link href="/sitemap" className="text-text-muted hover:text-white transition-colors">
+              </span>
+              <span className="text-text-muted cursor-not-allowed opacity-60">
                 Sitemap
-              </Link>
+              </span>
             </div>
             
             <div className="flex items-center gap-4 text-sm text-text-muted">
