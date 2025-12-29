@@ -10,48 +10,48 @@ const screenshots = [
     id: 'home', 
     label: 'Home Screen', 
     description: 'Beautiful movie grid with personalized recommendations',
-    color: 'from-purple-500 to-pink-500',
-    accent: '#8B5CF6',
+    color: 'from-slate-900 via-slate-800 to-slate-900',
+    accent: '#64748b',
     screenshot: '/screenshots/home.webp'
   },
   { 
     id: 'movies', 
     label: 'Movies', 
     description: 'Explore our extensive movie collection',
-    color: 'from-blue-500 to-cyan-400',
-    accent: '#0EA5E9',
+    color: 'from-slate-900 via-blue-950/20 to-slate-900',
+    accent: '#64748b',
     screenshot: '/screenshots/movies.webp'
   },
   { 
     id: 'shows', 
     label: 'TV Shows', 
     description: 'Browse popular TV series and episodes',
-    color: 'from-orange-500 to-red-500',
-    accent: '#F59E0B',
+    color: 'from-slate-900 via-amber-950/20 to-slate-900',
+    accent: '#64748b',
     screenshot: '/screenshots/favorites.webp'
   },
   { 
     id: 'search', 
     label: 'Search', 
     description: 'Find movies instantly with filters and suggestions',
-    color: 'from-green-500 to-emerald-400',
-    accent: '#10B981',
+    color: 'from-slate-900 via-emerald-950/20 to-slate-900',
+    accent: '#64748b',
     screenshot: '/screenshots/search.webp'
   },
   { 
     id: 'details', 
     label: 'Movie Details', 
     description: 'Everything about the movie in one beautiful view',
-    color: 'from-indigo-500 to-blue-400',
-    accent: '#6366F1',
+    color: 'from-slate-900 via-indigo-950/20 to-slate-900',
+    accent: '#64748b',
     screenshot: '/screenshots/details.webp'
   },
   { 
     id: 'profile', 
     label: 'Profile', 
     description: 'Your watchlist, history and settings',
-    color: 'from-amber-500 to-yellow-400',
-    accent: '#F59E0B',
+    color: 'from-slate-900 via-violet-950/20 to-slate-900',
+    accent: '#64748b',
     screenshot: '/screenshots/profile.webp'
   },
 ]
@@ -241,24 +241,26 @@ export default function InteractivePhoneMockup() {
 
                   {/* Actual Screenshot Image */}
                   <div className="relative w-full h-full pt-8">
-                    {/* Image with error handling */}
-                    <div className="relative w-full h-full">
+                    {/* Image with proper aspect ratio and optimization */}
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                       <Image
                         src={screenshots[currentIndex].screenshot}
                         alt={screenshots[currentIndex].label}
                         fill
-                        className="object-cover"
+                        className="object-contain"
+                        style={{ objectFit: 'cover' }}
                         onLoad={() => setIsLoading(false)}
                         onError={() => {
                           console.error(`Failed to load: ${screenshots[currentIndex].screenshot}`)
                           setIsLoading(false)
                         }}
                         priority={currentIndex === 0}
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={85}
                       />
                       
-                      {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                      {/* Subtle gradient overlay for better text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                     </div>
                     
                     {/* App Content Overlay for Details Screen */}
@@ -289,26 +291,26 @@ export default function InteractivePhoneMockup() {
                         </div>
 
                         {/* Media Player Controls */}
-                        <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-4 mt-4">
-                          <div className="flex items-center justify-between mb-4">
+                        <div className="bg-black/60 backdrop-blur-2xl rounded-3xl p-6 mt-6 border border-white/10 shadow-2xl">
+                          <div className="flex items-center justify-between mb-6">
                             <div>
-                              <h4 className="text-white font-semibold">Stranger Things</h4>
-                              <p className="text-white/60 text-sm">S4 • E1: Chapter One</p>
+                              <h4 className="text-white font-bold text-lg tracking-tight">Stranger Things</h4>
+                              <p className="text-white/70 text-sm font-medium">S4 • E1: Chapter One</p>
                             </div>
-                            <Maximize2 className="w-5 h-5 text-white" />
+                            <Maximize2 className="w-6 h-6 text-white/90 cursor-pointer hover:text-white transition-colors" />
                           </div>
 
                           {/* Progress Bar */}
-                          <div className="mb-4">
+                          <div className="mb-6">
                             <input
                               type="range"
                               min="0"
                               max={totalTime}
                               value={currentTime}
                               onChange={handleTimeChange}
-                              className="w-full h-1 bg-white/20 rounded-lg appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white"
+                              className="w-full h-2 bg-white/20 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:cursor-pointer"
                             />
-                            <div className="flex justify-between text-xs text-white/60 mt-1">
+                            <div className="flex justify-between text-sm text-white/60 mt-2 font-medium">
                               <span>{formatTime(currentTime)}</span>
                               <span>{formatTime(totalTime)}</span>
                             </div>
@@ -316,27 +318,27 @@ export default function InteractivePhoneMockup() {
 
                           {/* Player Controls */}
                           <div className="flex items-center justify-between">
-                            <SkipBack className="w-6 h-6 text-white/80 cursor-pointer hover:text-white transition-colors" />
+                            <SkipBack className="w-7 h-7 text-white/80 cursor-pointer hover:text-white hover:scale-110 transition-all duration-200" />
                             <button
                               onClick={() => setIsPlaying(!isPlaying)}
-                              className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:scale-105 transition-transform"
+                              className="w-14 h-14 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-all duration-200 shadow-lg hover:shadow-xl"
                             >
                               {isPlaying ? (
-                                <Pause className="w-6 h-6 text-black" />
+                                <Pause className="w-7 h-7 text-black" />
                               ) : (
-                                <Play className="w-6 h-6 text-black ml-1" />
+                                <Play className="w-7 h-7 text-black ml-1" />
                               )}
                             </button>
-                            <SkipForward className="w-6 h-6 text-white/80 cursor-pointer hover:text-white transition-colors" />
-                            <div className="flex items-center gap-2">
-                              <Volume2 className="w-4 h-4 text-white/80" />
+                            <SkipForward className="w-7 h-7 text-white/80 cursor-pointer hover:text-white hover:scale-110 transition-all duration-200" />
+                            <div className="flex items-center gap-3 ml-4">
+                              <Volume2 className="w-5 h-5 text-white/80" />
                               <input
                                 type="range"
                                 min="0"
                                 max="100"
                                 value={volume}
                                 onChange={handleVolumeChange}
-                                className="w-20 h-1 bg-white/20 rounded-lg appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white"
+                                className="w-24 h-1.5 bg-white/20 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-md"
                               />
                             </div>
                           </div>
@@ -346,21 +348,21 @@ export default function InteractivePhoneMockup() {
                   </div>
                   
                   {/* Label Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="glass-effect rounded-2xl p-4 backdrop-blur-lg border border-white/10">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-bold text-lg">{screenshots[currentIndex].label}</h3>
-                        <div className="flex items-center gap-2">
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="glass-effect rounded-2xl p-5 backdrop-blur-xl border border-white/5 shadow-2xl">
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="font-semibold text-xl tracking-tight">{screenshots[currentIndex].label}</h3>
+                        <div className="flex items-center gap-3">
                           <div 
-                            className="w-3 h-3 rounded-full"
+                            className="w-3 h-3 rounded-full shadow-lg"
                             style={{ backgroundColor: screenshots[currentIndex].accent }}
                           />
-                          <span className="text-xs text-text-muted">
-                            {currentIndex + 1}/{screenshots.length}
+                          <span className="text-sm font-medium text-white/60">
+                            {String(currentIndex + 1).padStart(2, '0')}/{String(screenshots.length).padStart(2, '0')}
                           </span>
                         </div>
                       </div>
-                      <p className="text-sm text-text-muted">{screenshots[currentIndex].description}</p>
+                      <p className="text-base text-white/70 leading-relaxed">{screenshots[currentIndex].description}</p>
                     </div>
                   </div>
                 </div>
@@ -368,8 +370,8 @@ export default function InteractivePhoneMockup() {
             </AnimatePresence>
 
             {/* Dots Indicator */}
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-              <div className="flex gap-2 px-4 py-2 rounded-full glass-effect backdrop-blur-sm">
+            <div className="absolute bottom-6 left-0 right-0 flex justify-center">
+              <div className="flex gap-3 px-6 py-3 rounded-full glass-effect backdrop-blur-xl border border-white/5 shadow-xl">
                 {screenshots.map((_, index) => (
                   <button
                     key={index}
@@ -377,10 +379,10 @@ export default function InteractivePhoneMockup() {
                       setIsLoading(true)
                       setCurrentIndex(index)
                     }}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-125 ${
                       index === currentIndex 
-                        ? 'scale-125' 
-                        : 'bg-white/30 hover:bg-white/50'
+                        ? 'scale-150 shadow-lg' 
+                        : 'bg-white/40 hover:bg-white/60 hover:shadow-md'
                     }`}
                     style={{
                       backgroundColor: index === currentIndex 
@@ -414,27 +416,27 @@ export default function InteractivePhoneMockup() {
         {/* Navigation Arrows */}
         <button
           onClick={prevScreenshot}
-          className="absolute -left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-effect flex items-center justify-center hover:bg-white/10 transition-all duration-300 z-20 group active:scale-95"
+          className="absolute -left-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-effect flex items-center justify-center hover:bg-white/15 transition-all duration-500 z-20 group active:scale-95 shadow-xl hover:shadow-2xl"
           aria-label="Previous screenshot"
         >
-          <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
+          <ChevronLeft className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" />
         </button>
         
         <button
           onClick={nextScreenshot}
-          className="absolute -right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-effect flex items-center justify-center hover:bg-white/10 transition-all duration-300 z-20 group active:scale-95"
+          className="absolute -right-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-effect flex items-center justify-center hover:bg-white/15 transition-all duration-500 z-20 group active:scale-95 shadow-xl hover:shadow-2xl"
           aria-label="Next screenshot"
         >
-          <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
+          <ChevronRight className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" />
         </button>
 
         {/* Fullscreen Button */}
         <button
           onClick={() => setIsFullscreen(true)}
-          className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full glass-effect flex items-center justify-center hover:bg-white/10 transition-all duration-300 z-20 group border border-primary/30 hover:border-primary/60 hover:scale-110"
+          className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full glass-effect flex items-center justify-center hover:bg-white/15 transition-all duration-500 z-20 group border border-white/10 hover:border-white/20 hover:scale-110 shadow-xl hover:shadow-2xl"
           aria-label="View fullscreen"
         >
-          <Maximize2 className="w-6 h-6 group-hover:scale-110 transition-transform" />
+          <Maximize2 className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" />
         </button>
 
         {/* Screenshot Counter */}
