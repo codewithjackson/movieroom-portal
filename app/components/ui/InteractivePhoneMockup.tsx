@@ -178,7 +178,7 @@ export default function InteractivePhoneMockup() {
   return (
     <>
       {/* Phone Mockup */}
-      <div className="relative w-80 sm:w-96 md:w-[28rem] lg:w-96">
+      <div className="relative w-[320px] sm:w-[384px] md:w-[28rem] lg:w-[384px] mx-auto">
         {/* Phone Frame with Glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-[3rem] border-[12px] border-gray-900 shadow-2xl shadow-primary/20" />
         
