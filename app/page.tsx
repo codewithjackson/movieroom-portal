@@ -169,8 +169,8 @@ export default function Home() {
             </div>
             
             {/* Right - Phone Mockup - Responsive sizing */}
-            <div className="w-full lg:w-1/2 flex justify-center items-center mt-8 lg:mt-0 lg:justify-end px-4">
-              <div className="relative w-full max-w-[420px] sm:max-w-[450px] md:max-w-xl lg:max-w-sm mx-auto lg:mx-0">
+            <div className="w-full lg:w-1/2 flex justify-center items-center mt-8 lg:mt-0 lg:justify-end">
+              <div className="relative w-full max-w-[380px] sm:max-w-[420px] md:max-w-[450px] lg:max-w-sm mx-auto">
                 <InteractivePhoneMockup />
                 {/* Floating Download Badge - Hidden on very small screens */}
                 <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 border border-white/10 backdrop-blur-sm flex items-center justify-center animate-pulse">

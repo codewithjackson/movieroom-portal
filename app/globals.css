@@ -66,7 +66,7 @@
   }
 
   .glass-effect {
-    @apply backdrop-blur-md bg-surface/50 border border-white/10;
+    @apply backdrop-blur-xl bg-white/5 border border-white/5 shadow-lg;
   }
 
   .glow-border {
