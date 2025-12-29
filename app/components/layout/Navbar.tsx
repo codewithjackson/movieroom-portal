@@ -14,8 +14,7 @@ import {
   Tv, 
   Star, 
   Sparkles,
-  LogIn,
-  UserPlus,
+  MessageCircle,
   Download,
   ChevronDown
 } from 'lucide-react'
@@ -254,27 +253,21 @@ const Navbar = () => {
                         </div>
                         <div>
                           <p className="font-semibold text-white">Welcome!</p>
-                          <p className="text-sm text-text-muted">Sign in to continue</p>
+                          <p className="text-sm text-text-muted">Join our community</p>
                         </div>
                       </div>
                     </div>
                     
                     <div className="py-2">
-                      <Link
-                        href="/login"
+                      <a
+                        href="https://whatsapp.com/channel/0029VbC8vSh2ZjCmnwNbuc0s"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors group"
                       >
-                        <LogIn className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
-                        <span className="text-white">Sign In</span>
-                      </Link>
-                      
-                      <Link
-                        href="/signup"
-                        className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors group"
-                      >
-                        <UserPlus className="w-4 h-4 text-secondary group-hover:scale-110 transition-transform" />
-                        <span className="text-white">Create Account</span>
-                      </Link>
+                        <MessageCircle className="w-4 h-4 text-green-500 group-hover:scale-110 transition-transform" />
+                        <span className="text-white">Join WhatsApp Channel</span>
+                      </a>
                     </div>
                     
                     <div className="py-2 border-t border-white/10">
@@ -384,23 +377,16 @@ const Navbar = () => {
               {/* Auth Buttons */}
               <div className="pt-4 border-t border-white/10">
                 <div className="flex flex-col gap-3">
-                  <Link
-                    href="/login"
+                  <a
+                    href="https://whatsapp.com/channel/0029VbC8vSh2ZjCmnwNbuc0s"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 text-white font-medium hover:from-primary/30 hover:to-secondary/30 transition-all"
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 hover:scale-105"
                   >
-                    <LogIn className="w-5 h-5" />
-                    Sign In
-                  </Link>
-                  
-                  <Link
-                    href="/signup"
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-all"
-                  >
-                    <UserPlus className="w-5 h-5" />
-                    Create Account
-                  </Link>
+                    <MessageCircle className="w-5 h-5" />
+                    Join WhatsApp Channel
+                  </a>
                 </div>
               </div>
             </div>
