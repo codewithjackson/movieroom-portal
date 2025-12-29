@@ -183,7 +183,7 @@ export default function InteractivePhoneMockup() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-[3rem] border-[12px] border-gray-900 shadow-2xl shadow-primary/20" />
         
         {/* Phone Screen */}
-        <div className="relative mt-[12px] ml-[12px] w-[calc(100%-24px)] h-[580px] md:h-[640px] bg-black rounded-[2.5rem] overflow-hidden">
+        <div className="relative mt-[12px] ml-[12px] w-[calc(100%-24px)] h-[640px] sm:h-[680px] md:h-[700px] lg:h-[720px] bg-black rounded-[2.5rem] overflow-hidden">
           {/* Screenshot Display */}
           <div 
             className="relative w-full h-full overflow-hidden cursor-grab active:cursor-grabbing"
