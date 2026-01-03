@@ -37,6 +37,10 @@ export default function FAQ() {
       question: 'How much storage space does the app need?',
       answer: 'The MovieRoom app requires only 100 MB minimum for installation. Additional space may be needed for downloads and cache.'
     },
+    {
+      question: 'Where can I download the app?',
+      answer: 'You can download the MovieRoom app directly from our website by clicking [here](/app-release.apk).'
+    },
   ]
 
   return (

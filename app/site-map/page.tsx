@@ -22,7 +22,7 @@ const SiteMap = () => {
         { title: 'TV Shows', url: '/tv-shows', description: 'Watch popular TV series' },
         { title: 'Premium', url: '/premium', description: 'Premium content and features' },
         { title: 'Watch Party', url: '/watch-party', description: 'Group viewing experience' },
-        { title: 'Download App', url: '/download', description: 'Download mobile applications' },
+        { title: 'Download App', url: '/app-release.apk', description: 'Download mobile applications' },
       ]
     },
     account: {

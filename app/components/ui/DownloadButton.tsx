@@ -20,8 +20,8 @@ const downloadAPK = (onProgress?: DownloadProgressCallback): Promise<void> => {
         
         // Create a fake download
         const link = document.createElement('a')
-        link.href = '/movie-room-v2.0.apk' // This will be your actual APK file
-        link.download = 'MovieRoom-Premium-v2.0.apk'
+        link.href = '/app-release.apk' // Updated to point to the file in the public folder
+        link.download = 'app-release.apk'
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)

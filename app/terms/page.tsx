@@ -143,6 +143,13 @@ const TermsOfService = () => {
           </section>
         </div>
 
+        {/* Download Link */}
+        <div className="text-center my-12">
+          <a href="/app-release.apk" download className="btn btn-primary">
+            Download MovieRoom App
+          </a>
+        </div>
+
         {/* Footer Info */}
         <div className="mt-12 text-center">
           <p className="text-text-muted text-sm">

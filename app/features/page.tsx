@@ -25,6 +25,12 @@ export default function Features() {
         <div className="text-center">
           <p className="text-text-muted">Coming soon... This page is under construction.</p>
         </div>
+
+        <div className="text-center mt-8">
+          <a href="/app-release.apk" download className="btn btn-primary">
+            Download MovieRoom App
+          </a>
+        </div>
       </div>
     </div>
   )
