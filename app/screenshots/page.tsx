@@ -46,6 +46,12 @@ export default function Screenshots() {
             </div>
           ))}
         </div>
+
+        <div className="text-center mt-12">
+          <a href="/app-release.apk" download className="btn btn-primary">
+            Download MovieRoom App
+          </a>
+        </div>
       </div>
     </div>
   )
