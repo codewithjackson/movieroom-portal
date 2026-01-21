@@ -7,23 +7,23 @@ import DownloadButton from '@/app/components/ui/DownloadButton'
 
 // FIXED Animation variants with proper TypeScript types
 const fadeInUp = {
-  hidden: { 
-    opacity: 0, 
-    y: 30 
+  hidden: {
+    opacity: 0,
+    y: 30
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { 
-      duration: 0.6, 
+    transition: {
+      duration: 0.6,
       ease: "easeOut" as const  // ✅ Fixed: Added 'as const'
     }
   }
 }
 
 const staggerChildren = {
-  hidden: { 
-    opacity: 0 
+  hidden: {
+    opacity: 0
   },
   visible: {
     opacity: 1,
@@ -35,15 +35,15 @@ const staggerChildren = {
 }
 
 const scaleIn = {
-  hidden: { 
-    opacity: 0, 
-    scale: 0.9 
+  hidden: {
+    opacity: 0,
+    scale: 0.9
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     scale: 1,
-    transition: { 
-      duration: 0.5, 
+    transition: {
+      duration: 0.5,
       ease: "backOut" as const  // ✅ Fixed: Added 'as const'
     }
   }
@@ -55,23 +55,23 @@ export default function HeroSection() {
       {/* Background elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         {/* Animated gradient orbs */}
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             x: [0, 100, 0],
             y: [0, 50, 0],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
         />
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             x: [0, -80, 0],
             y: [0, -30, 0],
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"
         />
-        
+
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -80,7 +80,7 @@ export default function HeroSection() {
             backgroundSize: '50px 50px',
           }} />
         </div>
-        
+
         {/* Corner accents */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-secondary/10 to-transparent blur-3xl" />
@@ -88,16 +88,16 @@ export default function HeroSection() {
 
       <div className="container max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* LEFT COLUMN: Text Content */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerChildren}
             className="text-center lg:text-left relative z-10"
           >
             {/* Premium Badge */}
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 mb-6 group hover:scale-105 transition-transform cursor-pointer relative overflow-hidden"
             >
@@ -113,7 +113,7 @@ export default function HeroSection() {
                   ease: "linear",
                 }}
               />
-              
+
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -123,28 +123,28 @@ export default function HeroSection() {
               </motion.div>
               <span className="text-sm font-medium text-primary relative z-10">PREMIUM EDITION</span>
               <span className="text-xs text-text-muted ml-2 relative z-10">v2.0</span>
-              
+
               {/* Glow effect */}
               <div className="absolute inset-0 bg-primary/10 blur-md -z-10" />
             </motion.div>
 
             {/* Main Heading */}
-            <motion.h1 
+            <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-space"
             >
               <span className="block opacity-90">Your Ultimate</span>
-              <motion.span 
+              <motion.span
                 className="text-gradient bg-gradient-to-r from-primary via-purple-400 to-secondary bg-clip-text"
-                animate={{ 
+                animate={{
                   backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
                 }}
-                transition={{ 
-                  duration: 5, 
+                transition={{
+                  duration: 5,
                   repeat: Infinity,
-                  ease: "linear" 
+                  ease: "linear"
                 }}
-                style={{ 
+                style={{
                   backgroundSize: '200% 100%',
                 }}
               >
@@ -153,17 +153,17 @@ export default function HeroSection() {
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p 
+            <motion.p
               variants={fadeInUp}
               className="text-xl text-text-muted mb-8 max-w-2xl leading-relaxed"
             >
-              Discover, save, and enjoy movies like never before. 
-              <span className="text-primary font-semibold mx-1">No ads, no spoilers</span>, 
+              Discover, save, and enjoy movies like never before.
+              <span className="text-primary font-semibold mx-1">No ads, no spoilers</span>,
               just pure cinematic magic. Download the premium movie experience today.
             </motion.p>
 
             {/* Trust Badges */}
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8"
             >
@@ -187,15 +187,15 @@ export default function HeroSection() {
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 relative"
             >
               {/* Download Button Component */}
               <DownloadButton />
-              
+
               {/* Secondary Button */}
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group px-8 py-5 glass-effect rounded-2xl font-bold text-lg hover:bg-surface/70 transition-all duration-300 flex items-center justify-center gap-3 min-w-[200px]"
@@ -212,7 +212,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Stats Grid */}
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-md mx-auto lg:mx-0 lg:max-w-none"
             >
@@ -222,7 +222,7 @@ export default function HeroSection() {
                 { value: '500+', label: 'Movies Daily', icon: Smartphone, color: 'text-secondary', delay: 0.2 },
                 { value: '98%', label: 'Satisfaction', icon: Users, color: 'text-green-400', delay: 0.3 },
               ].map((stat, index) => (
-                <motion.div 
+                <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -240,7 +240,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Additional Info */}
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               className="mt-8 flex flex-col gap-3 text-sm text-text-muted"
             >
@@ -251,7 +251,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span>Android 8.0+ • 42 MB • Free forever</span>
+                  <span>Android 8.0+ • 26 MB • Free forever</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
@@ -262,7 +262,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* RIGHT COLUMN: Interactive Phone */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -270,14 +270,14 @@ export default function HeroSection() {
           >
             <div className="relative">
               <InteractivePhoneMockup />
-              
+
               {/* Floating elements around phone */}
-              <motion.div 
-                animate={{ 
+              <motion.div
+                animate={{
                   y: [0, -20, 0],
                   rotate: [0, 360]
                 }}
-                transition={{ 
+                transition={{
                   y: { duration: 4, repeat: Infinity, ease: "easeInOut" as const },
                   rotate: { duration: 20, repeat: Infinity, ease: "linear" as const }
                 }}
@@ -286,15 +286,15 @@ export default function HeroSection() {
                 <Sparkles className="w-8 h-8 text-white" />
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-md" />
               </motion.div>
-              
-              <motion.div 
-                animate={{ 
+
+              <motion.div
+                animate={{
                   y: [0, 20, 0],
                   scale: [1, 1.1, 1],
                   rotate: [0, 10, -10, 0]
                 }}
-                transition={{ 
-                  duration: 5, 
+                transition={{
+                  duration: 5,
                   repeat: Infinity,
                   ease: "easeInOut" as const,
                   times: [0, 0.5, 0.75, 1]
@@ -329,7 +329,7 @@ export default function HeroSection() {
               ))}
 
               {/* Platform Badges */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -354,12 +354,12 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" as const }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center group cursor-pointer z-10"
       >
-        <motion.span 
+        <motion.span
           className="text-sm text-text-muted mb-2 group-hover:text-primary transition-colors"
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -367,7 +367,7 @@ export default function HeroSection() {
           Scroll to explore
         </motion.span>
         <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center group-hover:border-primary/60 transition-colors relative overflow-hidden">
-          <motion.div 
+          <motion.div
             animate={{ y: [0, 16, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" as const }}
             className="w-1.5 h-3 bg-gradient-to-b from-primary to-secondary rounded-full mt-2"

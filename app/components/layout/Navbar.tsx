@@ -3,16 +3,16 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { 
-  Menu, 
-  X, 
-  Search, 
-  User, 
-  Bell, 
-  Home, 
-  Film, 
-  Tv, 
-  Star, 
+import {
+  Menu,
+  X,
+  Search,
+  User,
+  Bell,
+  Home,
+  Film,
+  Tv,
+  Star,
   Sparkles,
   MessageCircle,
   Download,
@@ -37,7 +37,7 @@ const Navbar = () => {
   ]
 
   const downloadVersions = [
-    { version: 'v2.5.1', size: '85 MB', date: 'Latest', highlight: true },
+    { version: 'v2.5.1', size: '26 MB', date: 'Latest', highlight: true },
     { version: 'v2.4.3', size: '82 MB', date: 'Previous' },
     { version: 'v2.3.0', size: '80 MB', date: 'Older' },
   ]
@@ -70,17 +70,16 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-surface/95 backdrop-blur-lg border-b border-white/10 py-3' 
-          : 'bg-transparent py-5'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-surface/95 backdrop-blur-lg border-b border-white/10 py-3'
+        : 'bg-transparent py-5'
+        }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-3 group">
-                <motion.div 
+                <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                   className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/25"
@@ -104,20 +103,19 @@ const Navbar = () => {
                 {navItems.map((item) => {
                   const Icon = item.icon
                   const isActive = pathname === item.href
-                  
+
                   return (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`relative group flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 ${
-                        isActive 
-                          ? 'text-white bg-white/10' 
-                          : 'text-text-muted hover:text-white hover:bg-white/5'
-                      }`}
+                      className={`relative group flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 ${isActive
+                        ? 'text-white bg-white/10'
+                        : 'text-text-muted hover:text-white hover:bg-white/5'
+                        }`}
                     >
                       <Icon className="w-4 h-4" />
                       <span className="font-medium">{item.name}</span>
-                      
+
                       {/* Active indicator */}
                       {isActive && (
                         <motion.div
@@ -125,7 +123,7 @@ const Navbar = () => {
                           className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full"
                         />
                       )}
-                      
+
                       {/* Hover effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-primary/0 to-secondary/0 group-hover:from-primary/5 group-hover:to-secondary/5 rounded-lg transition-all duration-300" />
                     </Link>
@@ -141,10 +139,9 @@ const Navbar = () => {
                 >
                   <Download className="w-5 h-5 group-hover:animate-bounce" />
                   <span>Download</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                    downloadMenuOpen ? 'rotate-180' : ''
-                  }`} />
-                  
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${downloadMenuOpen ? 'rotate-180' : ''
+                    }`} />
+
                   {/* Glow effect */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity -z-10" />
                 </button>
@@ -173,30 +170,27 @@ const Navbar = () => {
                             </div>
                           </div>
                         </div>
-                        
+
                         {/* Version List */}
                         <div className="p-2">
                           {downloadVersions.map((version, index) => (
                             <a
                               key={index}
-                              href={`/downloads/movieroom-${version.version}.apk`}
-                              download={`MovieRoom-${version.version}.apk`}
-                              className={`flex items-center justify-between p-3 rounded-lg transition-all ${
-                                version.highlight
-                                  ? 'bg-gradient-to-r from-primary/20 to-secondary/20'
-                                  : 'hover:bg-white/10'
-                              }`}
+                              href="/MovieRoom.apk"
+                              download="MovieRoom.apk"
+                              className={`flex items-center justify-between p-3 rounded-lg transition-all ${version.highlight
+                                ? 'bg-gradient-to-r from-primary/20 to-secondary/20'
+                                : 'hover:bg-white/10'
+                                }`}
                               onClick={() => setDownloadMenuOpen(false)}
                             >
                               <div className="flex items-center gap-3">
-                                <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                                  version.highlight
-                                    ? 'bg-gradient-to-br from-primary to-secondary'
-                                    : 'bg-white/5'
-                                }`}>
-                                  <Download className={`w-4 h-4 ${
-                                    version.highlight ? 'text-white' : 'text-text-muted'
-                                  }`} />
+                                <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${version.highlight
+                                  ? 'bg-gradient-to-br from-primary to-secondary'
+                                  : 'bg-white/5'
+                                  }`}>
+                                  <Download className={`w-4 h-4 ${version.highlight ? 'text-white' : 'text-text-muted'
+                                    }`} />
                                 </div>
                                 <div>
                                   <div className="flex items-center gap-2">
@@ -210,17 +204,16 @@ const Navbar = () => {
                                   <p className="text-xs text-text-muted">{version.size} • {version.date}</p>
                                 </div>
                               </div>
-                              <div className={`text-xs px-2 py-1 rounded ${
-                                version.highlight
-                                  ? 'bg-primary/20 text-primary'
-                                  : 'bg-white/5 text-text-muted'
-                              }`}>
+                              <div className={`text-xs px-2 py-1 rounded ${version.highlight
+                                ? 'bg-primary/20 text-primary'
+                                : 'bg-white/5 text-text-muted'
+                                }`}>
                                 APK
                               </div>
                             </a>
                           ))}
                         </div>
-                        
+
                         {/* Quick Info */}
                         <div className="p-3 border-t border-white/10 bg-black/20">
                           <div className="flex items-center justify-between text-xs text-text-muted">
@@ -242,7 +235,7 @@ const Navbar = () => {
                 <button className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 border border-white/10 flex items-center justify-center transition-all hover:scale-105">
                   <User className="w-5 h-5 text-white" />
                 </button>
-                
+
                 {/* Dropdown Menu */}
                 <div className="absolute right-0 top-full mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                   <div className="bg-surface/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-2 mt-2">
@@ -257,7 +250,7 @@ const Navbar = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="py-2">
                       <a
                         href="https://whatsapp.com/channel/0029VbC8vSh2ZjCmnwNbuc0s"
@@ -269,7 +262,7 @@ const Navbar = () => {
                         <span className="text-white">Join WhatsApp Channel</span>
                       </a>
                     </div>
-                    
+
                     <div className="py-2 border-t border-white/10">
                       {userMenuItems.map((item) => (
                         <Link
@@ -316,17 +309,16 @@ const Navbar = () => {
                 {navItems.map((item) => {
                   const Icon = item.icon
                   const isActive = pathname === item.href
-                  
+
                   return (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
-                        isActive 
-                          ? 'bg-gradient-to-r from-primary/20 to-secondary/20 text-white border border-primary/30' 
-                          : 'text-text-muted hover:text-white hover:bg-white/10'
-                      }`}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${isActive
+                        ? 'bg-gradient-to-r from-primary/20 to-secondary/20 text-white border border-primary/30'
+                        : 'text-text-muted hover:text-white hover:bg-white/10'
+                        }`}
                     >
                       <Icon className="w-5 h-5" />
                       <span className="font-medium">{item.name}</span>
@@ -340,13 +332,13 @@ const Navbar = () => {
                 <div className="mb-4">
                   <h3 className="font-bold text-white mb-3">Download Latest Version</h3>
                   <a
-                    href="/downloads/movieroom-v2.5.1.apk"
-                    download="MovieRoom-v2.5.1.apk"
+                    href="/MovieRoom.apk"
+                    download="MovieRoom.apk"
                     onClick={() => setIsOpen(false)}
                     className="flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:shadow-lg hover:shadow-primary/25 transition-all"
                   >
                     <Download className="w-5 h-5" />
-                    Download v2.5.1 (85 MB)
+                    Download v2.5.1 (26 MB)
                   </a>
                   <p className="text-xs text-text-muted text-center mt-2">
                     Android 8.0+ • Safe & Verified
@@ -359,8 +351,8 @@ const Navbar = () => {
                   {downloadVersions.slice(1).map((version, index) => (
                     <a
                       key={index}
-                      href={`/downloads/movieroom-${version.version}.apk`}
-                      download={`MovieRoom-${version.version}.apk`}
+                      href="/MovieRoom.apk"
+                      download="MovieRoom.apk"
                       onClick={() => setIsOpen(false)}
                       className="flex items-center justify-between px-4 py-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
                     >
@@ -396,7 +388,7 @@ const Navbar = () => {
 
       {/* Backdrop overlay for mobile */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 md:hidden"
           onClick={() => setIsOpen(false)}
         />

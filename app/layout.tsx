@@ -3,23 +3,23 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const spaceGrotesk = Space_Grotesk({ 
-  subsets: ['latin'], 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
   variable: '--font-space',
   weight: ['300', '400', '500', '600', '700']
 })
 
 export const metadata: Metadata = {
   title: 'MovieRoom Premium APK Download - Free Android Movie App | Official Site',
-  description: 'Download MovieRoom Premium APK v2.5.1 - Free Android movie streaming app with 4K quality, offline downloads, and 10M+ happy users. Safe, virus-free, no registration required. Latest version 85MB.',
+  description: 'Download MovieRoom Premium APK v2.5.1 - Free Android movie streaming app with 4K quality, offline downloads, and 10M+ happy users. Safe, virus-free, no registration required. Latest version 26MB.',
   keywords: 'MovieRoom, MovieRoom APK, download MovieRoom, free movie app, Android streaming, movie download, watch movies online, MovieRoom premium, MovieRoom latest version, APK download',
   authors: [{ name: 'MovieRoom Official' }],
   creator: 'MovieRoom Official Team',
   publisher: 'MovieRoom',
-  formatDetection: { 
-    email: false, 
-    address: false, 
-    telephone: false 
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
   },
   metadataBase: new URL('https://movieroom-portal.vercel.app'),
   alternates: {
@@ -78,10 +78,26 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        {/* Google Analytics */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID`}
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'YOUR_GA_TRACKING_ID');
+            `,
+          }}
+        ></script>
       </head>
       <body className="font-sans">
         {children}
-        
+
         {/* Background elements */}
         <div className="fixed inset-0 -z-10 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />

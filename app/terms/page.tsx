@@ -134,20 +134,13 @@ const TermsOfService = () => {
             <div className="space-y-4 text-text-muted leading-relaxed">
               <p><strong>Contact Information:</strong></p>
               <div className="space-y-2">
-                <p><strong>Email:</strong> legal@movieroom.com</p>
-                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-                <p><strong>Address:</strong> 123 Cinema Street, Hollywood, CA</p>
+                <p><strong>Email:</strong> movieroom263@gmail.com</p>
+                <p><strong>Phone:</strong> +233 55 023 2938</p>
+                <p><strong>Address:</strong> Accra, Ghana</p>
               </div>
               <p>Response time: 24-48 hours during business days.</p>
             </div>
           </section>
-        </div>
-
-        {/* Download Link */}
-        <div className="text-center my-12">
-          <a href="/app-release.apk" download className="btn btn-primary">
-            Download MovieRoom App
-          </a>
         </div>
 
         {/* Footer Info */}

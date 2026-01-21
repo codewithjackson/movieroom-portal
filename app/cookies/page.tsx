@@ -144,9 +144,9 @@ const CookiePolicy = () => {
             <div className="space-y-4 text-text-muted leading-relaxed">
               <p><strong>Questions About Our Cookie Policy?</strong></p>
               <div className="space-y-2">
-                <p><strong>Email:</strong> privacy@movieroom.com</p>
-                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-                <p><strong>Address:</strong> 123 Cinema Street, Hollywood, CA</p>
+                <p><strong>Email:</strong> movieroom263@gmail.com</p>
+                <p><strong>Phone:</strong> +233 55 023 2938</p>
+                <p><strong>Address:</strong> Accra, Ghana</p>
               </div>
               <p><strong>Response Time:</strong></p>
               <p>We typically respond within 24-48 hours during business days.</p>

@@ -14,18 +14,18 @@ const downloadAPK = (onProgress?: DownloadProgressCallback): Promise<void> => {
     const interval = setInterval(() => {
       progress += 10
       if (onProgress) onProgress(progress)
-      
+
       if (progress >= 100) {
         clearInterval(interval)
-        
+
         // Create a fake download
         const link = document.createElement('a')
-        link.href = '/app-release.apk' // Updated to point to the file in the public folder
-        link.download = 'app-release.apk'
+        link.href = '/MovieRoom.apk' // This will be your actual APK file
+        link.download = 'MovieRoom.apk'
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
-        
+
         // Trigger confetti
         triggerConfetti()
         resolve()
@@ -38,7 +38,7 @@ const triggerConfetti = () => {
   // Simple confetti effect
   const confettiCount = 100
   const confettiElements = []
-  
+
   for (let i = 0; i < confettiCount; i++) {
     const confettiEl = document.createElement('div')
     confettiEl.className = 'fixed w-2 h-2 rounded-full z-50 pointer-events-none'
@@ -48,7 +48,7 @@ const triggerConfetti = () => {
     document.body.appendChild(confettiEl)
     confettiElements.push(confettiEl)
   }
-  
+
   // Animate confetti
   confettiElements.forEach((el, i) => {
     const animation = el.animate([
@@ -58,7 +58,7 @@ const triggerConfetti = () => {
       duration: 1000 + Math.random() * 1000,
       easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
     })
-    
+
     animation.onfinish = () => el.remove()
   })
 }
@@ -84,18 +84,18 @@ export default function DownloadButton() {
     const interval = window.setInterval(() => {
       setDownloadCount(prev => prev + Math.floor(Math.random() * 3))
     }, 5000)
-    
+
     return () => window.clearInterval(interval)
   }, [])
 
   const handleDownload = async (version = 'v2.0') => {
     if (isDownloading) return
-    
+
     setIsDownloading(true)
     setProgress(0)
     setIsComplete(false)
     setShowOptions(false)
-    
+
     // Show downloading animation
     const progressInterval = window.setInterval(() => {
       setProgress(prev => {
@@ -111,21 +111,21 @@ export default function DownloadButton() {
       await downloadAPK((realProgress) => {
         setProgress(realProgress)
       })
-      
+
       window.clearInterval(progressInterval)
       setProgress(100)
       setIsComplete(true)
-      
+
       // Increase download count
       setDownloadCount(prev => prev + 1)
-      
+
       // Reset after 4 seconds
       window.setTimeout(() => {
         setIsComplete(false)
         setIsDownloading(false)
         setProgress(0)
       }, 4000)
-      
+
     } catch (error) {
       console.error('Download failed:', error)
       window.clearInterval(progressInterval)
@@ -142,38 +142,38 @@ export default function DownloadButton() {
 
   // Animation variants
   const fadeInUp = {
-    hidden: { 
-      opacity: 0, 
-      y: 20 
+    hidden: {
+      opacity: 0,
+      y: 20
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        duration: 0.3, 
+      transition: {
+        duration: 0.3,
         ease: "easeOut" as const
       }
     }
   }
 
   const scaleIn = {
-    hidden: { 
-      opacity: 0, 
-      scale: 0.9 
+    hidden: {
+      opacity: 0,
+      scale: 0.9
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
-      transition: { 
-        duration: 0.2, 
+      transition: {
+        duration: 0.2,
         ease: "backOut" as const
       }
     },
-    exit: { 
-      opacity: 0, 
+    exit: {
+      opacity: 0,
       scale: 0.9,
-      transition: { 
-        duration: 0.2, 
+      transition: {
+        duration: 0.2,
         ease: "easeIn" as const
       }
     }
@@ -205,7 +205,7 @@ export default function DownloadButton() {
               opacity: 0.6,
             }}
           />
-          
+
           {/* Button content */}
           <div className="flex items-center justify-center gap-3 relative z-10">
             {/* Icon */}
@@ -234,14 +234,14 @@ export default function DownloadButton() {
                 <Download className="w-7 h-7 text-white" />
               </motion.div>
             )}
-            
+
             {/* Text */}
             <div className="text-left">
               <div className="flex items-center gap-2">
                 <span className="text-white text-lg font-bold">
-                  {isComplete ? 'Download Complete!' : 
-                   isDownloading ? 'Downloading...' : 
-                   'Download MovieRoom'}
+                  {isComplete ? 'Download Complete!' :
+                    isDownloading ? 'Downloading...' :
+                      'Download MovieRoom'}
                 </span>
                 {!isDownloading && !isComplete && (
                   <motion.div
@@ -253,7 +253,7 @@ export default function DownloadButton() {
                 )}
               </div>
               <div className="text-sm text-white/80 flex items-center gap-2">
-                <span>{isDownloading ? `${progress.toFixed(0)}%` : 'v2.0 • 42 MB'}</span>
+                <span>{isDownloading ? `${progress.toFixed(0)}%` : 'v2.0 • 26 MB'}</span>
                 <span className="text-xs px-2 py-0.5 bg-white/20 rounded-full">
                   {downloadCount.toLocaleString()} downloads
                 </span>
@@ -263,7 +263,7 @@ export default function DownloadButton() {
 
           {/* Progress bar */}
           {isDownloading && (
-            <motion.div 
+            <motion.div
               className="absolute bottom-0 left-0 right-0 h-1.5 bg-white/20 rounded-b-2xl overflow-hidden"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: progress / 100 }}
@@ -331,7 +331,7 @@ export default function DownloadButton() {
               </div>
               <p className="text-sm text-text-muted">Choose the version that fits your needs</p>
             </div>
-            
+
             {/* Version list */}
             <div className="p-2">
               {versions.map((version) => (
@@ -343,18 +343,16 @@ export default function DownloadButton() {
                   }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full p-4 rounded-xl mb-2 flex items-center justify-between transition-all ${
-                    version.recommended 
-                      ? 'bg-primary/10 border border-primary/30' 
-                      : 'hover:bg-white/5'
-                  }`}
+                  className={`w-full p-4 rounded-xl mb-2 flex items-center justify-between transition-all ${version.recommended
+                    ? 'bg-primary/10 border border-primary/30'
+                    : 'hover:bg-white/5'
+                    }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                      version.recommended 
-                        ? 'bg-primary/20 text-primary' 
-                        : 'bg-white/10 text-text-muted'
-                    }`}>
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${version.recommended
+                      ? 'bg-primary/20 text-primary'
+                      : 'bg-white/10 text-text-muted'
+                      }`}>
                       {version.recommended ? (
                         <Zap className="w-5 h-5" />
                       ) : (
@@ -380,7 +378,7 @@ export default function DownloadButton() {
                 </motion.button>
               ))}
             </div>
-            
+
             {/* Dropdown footer */}
             <div className="p-4 border-t border-white/10 bg-black/20">
               <div className="flex items-center justify-between text-sm">
@@ -457,7 +455,7 @@ export default function DownloadButton() {
       )}
 
       {/* Tooltip on hover */}
-      <div 
+      <div
         className="absolute -top-12 left-1/2 -translate-x-1/2"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
@@ -507,7 +505,7 @@ export default function DownloadButton() {
             ))}
           </>
         )}
-        
+
         {isComplete && (
           <motion.div
             className="absolute inset-0 rounded-3xl"

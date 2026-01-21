@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { 
-  Film, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Youtube, 
+import {
+  Film,
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
   Github,
   Mail,
   Phone,
@@ -70,7 +70,7 @@ const Footer = () => {
     <footer className="relative bg-gradient-to-b from-surface to-surface/95 border-t border-white/10">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      
+
       {/* Feature Highlights */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-8">
@@ -104,28 +104,28 @@ const Footer = () => {
                 <span className="text-sm text-primary font-medium">PREMIUM STREAMING</span>
               </div>
             </Link>
-            
+
             <p className="text-text-muted max-w-md">
-              Experience cinema like never before. Stream thousands of movies and TV shows 
+              Experience cinema like never before. Stream thousands of movies and TV shows
               in stunning 4K quality. Watch anytime, anywhere with friends and family.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-text-muted">
                 <Mail className="w-4 h-4" />
-                <span>support@movieroom.com</span>
+                <span>movieroom263@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-text-muted">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+233 55 023 2938</span>
               </div>
               <div className="flex items-center gap-3 text-text-muted">
                 <MapPin className="w-4 h-4" />
-                <span>123 Cinema Street, Hollywood, CA</span>
+                <span>Accra, Ghana</span>
               </div>
             </div>
-            
+
             {/* Social Links */}
             <div className="flex items-center gap-4">
               {socialLinks.map((social, index) => (
@@ -177,7 +177,7 @@ const Footer = () => {
               Join Our WhatsApp Channel
             </h3>
             <p className="text-text-muted mb-6">
-              Get exclusive movie recommendations, latest updates, and join our community of movie lovers. 
+              Get exclusive movie recommendations, latest updates, and join our community of movie lovers.
               Never miss out on new releases and special offers!
             </p>
             <a
@@ -203,7 +203,7 @@ const Footer = () => {
               <span> {currentYear} MovieRoom. All rights reserved.</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
             </div>
-            
+
             <div className="flex flex-wrap items-center gap-6 text-sm">
               <span className="text-text-muted cursor-not-allowed opacity-60">
                 Privacy Policy
@@ -218,7 +218,7 @@ const Footer = () => {
                 Sitemap
               </span>
             </div>
-            
+
             <div className="flex items-center gap-4 text-sm text-text-muted">
               <div className="flex items-center gap-2">
                 <span>English</span>
@@ -244,7 +244,7 @@ const Footer = () => {
               <div className="text-white font-semibold">Google Play</div>
             </div>
           </a>
-          
+
           <a
             href="#"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group"

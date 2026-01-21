@@ -19,7 +19,7 @@ export default function Contact() {
         <p className="text-xl text-center text-text-muted mb-12">
           We're here to help with any questions or feedback
         </p>
-        
+
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Contact Form */}
@@ -30,6 +30,8 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-white mb-2">Name</label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none"
                     placeholder="Your name"
                   />
@@ -38,13 +40,18 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-white mb-2">Email</label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none"
                     placeholder="your@email.com"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-white mb-2">Subject</label>
-                  <select className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-primary focus:outline-none">
+                  <select
+                    name="subject"
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-primary focus:outline-none"
+                  >
                     <option>General Question</option>
                     <option>Technical Support</option>
                     <option>Feature Request</option>
@@ -55,6 +62,8 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-white mb-2">Message</label>
                   <textarea
                     rows={4}
+                    name="message"
+                    required
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-text-muted focus:border-primary focus:outline-none"
                     placeholder="How can we help you?"
                   />
@@ -67,7 +76,7 @@ export default function Contact() {
                 </button>
               </form>
             </div>
-            
+
             {/* Contact Information */}
             <div className="space-y-6">
               <div className="p-8 rounded-2xl border border-white/10 bg-surface/30 backdrop-blur-sm">
@@ -75,17 +84,17 @@ export default function Contact() {
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-lg font-medium text-white mb-2">Email Support</h3>
-                    <p className="text-text-muted">support@movieroom.app</p>
+                    <p className="text-text-muted">movieroom263@gmail.com</p>
                     <p className="text-sm text-text-muted">Response within 24 hours</p>
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-white mb-2">Business Inquiries</h3>
-                    <p className="text-text-muted">business@movieroom.app</p>
+                    <p className="text-text-muted">movieroom263@gmail.com</p>
                     <p className="text-sm text-text-muted">Partnerships and collaborations</p>
                   </div>
                 </div>
               </div>
-              
+
               <div className="p-8 rounded-2xl border border-white/10 bg-surface/30 backdrop-blur-sm">
                 <h2 className="text-2xl font-semibold text-white mb-6">FAQ</h2>
                 <p className="text-text-muted mb-4">
