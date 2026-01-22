@@ -82,12 +82,12 @@ const Navbar = () => {
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/25 overflow-hidden"
+                  className="relative w-12 h-12 rounded-xl flex items-center justify-center shadow-lg shadow-primary/25 overflow-hidden"
                 >
                   <img
                     src="/favicon.ico"
                     alt="MovieRoom Logo"
-                    className="w-6 h-6 object-contain"
+                    className="w-10 h-10 object-cover rounded-lg"
                   />
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity" />
                 </motion.div>
