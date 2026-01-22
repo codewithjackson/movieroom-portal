@@ -89,7 +89,6 @@ const Navbar = () => {
                     alt="MovieRoom Logo"
                     className="w-10 h-10 object-cover rounded-lg"
                   />
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity" />
                 </motion.div>
                 <div className="flex flex-col">
                   <span className="text-xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
