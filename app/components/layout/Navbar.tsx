@@ -88,6 +88,10 @@ const Navbar = () => {
                     src="/icon-512.png"
                     alt="MovieRoom Logo"
                     className="w-10 h-10 object-cover rounded-lg"
+                    onError={(e) => {
+                      console.error('Logo failed to load:', e);
+                      e.currentTarget.style.display = 'none';
+                    }}
                   />
                 </motion.div>
                 <div className="flex flex-col">
