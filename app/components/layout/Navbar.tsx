@@ -85,7 +85,7 @@ const Navbar = () => {
                   className="relative w-12 h-12 rounded-xl flex items-center justify-center shadow-lg shadow-primary/25 overflow-hidden"
                 >
                   <img
-                    src="/favicon.ico"
+                    src="/icon-512.png"
                     alt="MovieRoom Logo"
                     className="w-10 h-10 object-cover rounded-lg"
                   />
