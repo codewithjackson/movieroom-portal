@@ -116,10 +116,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4" />
                 <span>movieroom263@gmail.com</span>
               </div>
-              <div className="flex items-center gap-3 text-text-muted">
-                <Phone className="w-4 h-4" />
-                <span>+233 55 023 2938</span>
-              </div>
+
               <div className="flex items-center gap-3 text-text-muted">
                 <MapPin className="w-4 h-4" />
                 <span>Accra, Ghana</span>
