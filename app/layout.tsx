@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
+import { Analytics } from "@vercel/analytics/react"
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -100,6 +101,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans">
         {children}
+        <Analytics />
 
         {/* Background elements */}
         <div className="fixed inset-0 -z-10 overflow-hidden">
