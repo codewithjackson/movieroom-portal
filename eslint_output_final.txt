@@ -1,0 +1,103 @@
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx
+   39:7   warning  'scaleIn' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   58:21  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:58:21
+  56 |   const particles = useMemo(() =>
+  57 |     [...Array(12)].map(() => ({
+> 58 |       left: `${15 + Math.random() * 70}%`,
+     |                     ^^^^^^^^^^^^^ Cannot call impure function
+  59 |       top: `${15 + Math.random() * 70}%`,
+  60 |       duration: 3 + Math.random() * 3,
+  61 |       delay: Math.random() * 3,  react-hooks/purity
+   59:20  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:59:20
+  57 |     [...Array(12)].map(() => ({
+  58 |       left: `${15 + Math.random() * 70}%`,
+> 59 |       top: `${15 + Math.random() * 70}%`,
+     |                    ^^^^^^^^^^^^^ Cannot call impure function
+  60 |       duration: 3 + Math.random() * 3,
+  61 |       delay: Math.random() * 3,
+  62 |     }))                             react-hooks/purity
+   60:21  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:60:21
+  58 |       left: `${15 + Math.random() * 70}%`,
+  59 |       top: `${15 + Math.random() * 70}%`,
+> 60 |       duration: 3 + Math.random() * 3,
+     |                     ^^^^^^^^^^^^^ Cannot call impure function
+  61 |       delay: Math.random() * 3,
+  62 |     }))
+  63 |     , []);                                                 react-hooks/purity
+   61:14  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:61:14
+  59 |       top: `${15 + Math.random() * 70}%`,
+  60 |       duration: 3 + Math.random() * 3,
+> 61 |       delay: Math.random() * 3,
+     |              ^^^^^^^^^^^^^ Cannot call impure function
+  62 |     }))
+  63 |     , []);
+  64 |                                                                                                   react-hooks/purity
+   68:16  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:68:16
+  66 |   const borderParticles = useMemo(() =>
+  67 |     [...Array(8)].map(() => ({
+> 68 |       left: `${Math.random() * 100}%`,
+     |                ^^^^^^^^^^^^^ Cannot call impure function
+  69 |       top: `${Math.random() * 100}%`,
+  70 |       duration: 3 + Math.random() * 2,
+  71 |       delay: Math.random() * 5,          react-hooks/purity
+   69:15  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:69:15
+  67 |     [...Array(8)].map(() => ({
+  68 |       left: `${Math.random() * 100}%`,
+> 69 |       top: `${Math.random() * 100}%`,
+     |               ^^^^^^^^^^^^^ Cannot call impure function
+  70 |       duration: 3 + Math.random() * 2,
+  71 |       delay: Math.random() * 5,
+  72 |     }))                                           react-hooks/purity
+   70:21  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:70:21
+  68 |       left: `${Math.random() * 100}%`,
+  69 |       top: `${Math.random() * 100}%`,
+> 70 |       duration: 3 + Math.random() * 2,
+     |                     ^^^^^^^^^^^^^ Cannot call impure function
+  71 |       delay: Math.random() * 5,
+  72 |     }))
+  73 |     , []);                                                         react-hooks/purity
+   71:14  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:71:14
+  69 |       top: `${Math.random() * 100}%`,
+  70 |       duration: 3 + Math.random() * 2,
+> 71 |       delay: Math.random() * 5,
+     |              ^^^^^^^^^^^^^ Cannot call impure function
+  72 |     }))
+  73 |     , []);
+  74 |                                                                                                       react-hooks/purity
+  245:28  warning  'index' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              @typescript-eslint/no-unused-vars
+
+Γ£û 10 problems (8 errors, 2 warnings)
+

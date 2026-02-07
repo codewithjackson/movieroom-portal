@@ -1,0 +1,23 @@
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx
+   39:7   warning  'scaleIn' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   61:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\LENOVO\movieroom-portal\app\components\sections\HeroSection.tsx:61:5
+  59 |   useEffect(() => {
+  60 |     // Generate values only once on client side
+> 61 |     setParticles([...Array(12)].map(() => ({
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  62 |       left: `${15 + Math.random() * 70}%`,
+  63 |       top: `${15 + Math.random() * 70}%`,
+  64 |       duration: 3 + Math.random() * 3,  react-hooks/set-state-in-effect
+  246:28  warning  'index' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+
+Γ£û 3 problems (1 error, 2 warnings)
+

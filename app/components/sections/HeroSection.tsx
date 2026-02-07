@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Sparkles, Shield, Zap, Star, TrendingUp, Users, Smartphone } from 'lucide-react'
 import InteractivePhoneMockup from '@/app/components/ui/InteractivePhoneMockup'
@@ -34,20 +35,32 @@ const staggerChildren = {
   }
 }
 
-const scaleIn = {
-  hidden: {
-    opacity: 0,
-    scale: 0.9
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "backOut" as const  // ✅ Fixed: Added 'as const'
-    }
-  }
-}
+// Decorative elements constants moved outside to ensure purity
+const PARTICLES = [
+  { left: '25%', top: '30%', duration: 4.2, delay: 0.5 },
+  { left: '45%', top: '20%', duration: 3.8, delay: 1.2 },
+  { left: '75%', top: '40%', duration: 5.1, delay: 0.8 },
+  { left: '15%', top: '60%', duration: 4.5, delay: 2.1 },
+  { left: '85%', top: '70%', duration: 3.2, delay: 0.3 },
+  { left: '35%', top: '80%', duration: 4.8, delay: 1.5 },
+  { left: '65%', top: '15%', duration: 3.5, delay: 0.7 },
+  { left: '20%', top: '45%', duration: 5.5, delay: 1.1 },
+  { left: '80%', top: '25%', duration: 4.1, delay: 2.5 },
+  { left: '55%', top: '55%', duration: 3.9, delay: 0.2 },
+  { left: '40%', top: '75%', duration: 4.7, delay: 1.8 },
+  { left: '70%', top: '35%', duration: 5.2, delay: 0.9 },
+]
+
+const BORDER_PARTICLES = [
+  { left: '10%', top: '20%', duration: 3.5, delay: 1.2 },
+  { left: '30%', top: '80%', duration: 4.2, delay: 0.5 },
+  { left: '50%', top: '40%', duration: 3.8, delay: 2.1 },
+  { left: '70%', top: '90%', duration: 5.1, delay: 0.8 },
+  { left: '90%', top: '30%', duration: 4.5, delay: 1.5 },
+  { left: '20%', top: '60%', duration: 3.2, delay: 0.3 },
+  { left: '60%', top: '10%', duration: 4.8, delay: 2.5 },
+  { left: '80%', top: '50%', duration: 3.5, delay: 0.7 },
+]
 
 export default function HeroSection() {
   return (
@@ -220,7 +233,7 @@ export default function HeroSection() {
                 { value: '4.9★', label: 'Rating', icon: Star, color: 'text-yellow-400', delay: 0.1 },
                 { value: '500+', label: 'Movies Daily', icon: Smartphone, color: 'text-secondary', delay: 0.2 },
                 { value: '98%', label: 'Satisfaction', icon: Users, color: 'text-green-400', delay: 0.3 },
-              ].map((stat, index) => (
+              ].map((stat) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
@@ -305,13 +318,13 @@ export default function HeroSection() {
               </motion.div>
 
               {/* Floating particles */}
-              {[...Array(12)].map((_, i) => (
+              {PARTICLES.map((particle, i) => (
                 <motion.div
                   key={i}
                   className="absolute w-1 h-1 bg-primary rounded-full"
                   style={{
-                    left: `${15 + Math.random() * 70}%`,
-                    top: `${15 + Math.random() * 70}%`,
+                    left: particle.left,
+                    top: particle.top,
                   }}
                   animate={{
                     y: [0, -50, 0],
@@ -319,9 +332,9 @@ export default function HeroSection() {
                     scale: [1, 1.5, 1],
                   }}
                   transition={{
-                    duration: 3 + Math.random() * 3,
+                    duration: particle.duration,
                     repeat: Infinity,
-                    delay: Math.random() * 3,
+                    delay: particle.delay,
                     ease: "easeInOut" as const
                   }}
                 />
@@ -401,22 +414,22 @@ export default function HeroSection() {
 
       {/* Interactive floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {BORDER_PARTICLES.map((particle, i) => (
           <motion.div
             key={i}
             className="absolute w-px h-20 bg-gradient-to-b from-transparent via-primary/30 to-transparent"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: particle.left,
+              top: particle.top,
             }}
             animate={{
               y: [0, -100, 0],
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: particle.delay,
               ease: "easeInOut" as const
             }}
           />
