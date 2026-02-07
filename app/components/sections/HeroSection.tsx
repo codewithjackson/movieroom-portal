@@ -195,9 +195,8 @@ export default function HeroSection() {
               <DownloadButton />
 
               {/* Secondary Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <Link
+                href="/features"
                 className="group px-8 py-5 glass-effect rounded-2xl font-bold text-lg hover:bg-surface/70 transition-all duration-300 flex items-center justify-center gap-3 min-w-[200px]"
               >
                 <span>Explore Features</span>
@@ -208,7 +207,7 @@ export default function HeroSection() {
                 >
                   →
                 </motion.span>
-              </motion.button>
+              </Link>
             </motion.div>
 
             {/* Stats Grid */}
