@@ -173,7 +173,7 @@ const Navbar = () => {
                             </div>
                             <div>
                               <p className="font-semibold text-white">Download MovieRoom</p>
-                              <p className="text-xs text-text-muted">Latest version: v1.0.2</p>
+                              <p className="text-xs text-text-muted">Latest version: v1.0.3</p>
                             </div>
                           </div>
                         </div>
