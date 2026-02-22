@@ -6,53 +6,53 @@ import { ChevronLeft, ChevronRight, Maximize2, Loader2, X, Play, Pause, SkipBack
 import Image from 'next/image'
 
 const screenshots = [
-  { 
-    id: 'home', 
-    label: 'Home Screen', 
+  {
+    id: 'home',
+    label: 'Home Screen',
     description: 'Beautiful movie grid with personalized recommendations',
     color: 'from-slate-900 via-slate-800 to-slate-900',
     accent: '#64748b',
     screenshot: '/screenshots/home.webp'
   },
-  { 
-    id: 'movies', 
-    label: 'Movies', 
+  {
+    id: 'movies',
+    label: 'Movies',
     description: 'Explore our extensive movie collection',
     color: 'from-slate-900 via-blue-950/20 to-slate-900',
-    accent: '#64748b',
+    accent: '#3b82f6',
     screenshot: '/screenshots/movies.webp'
   },
-  { 
-    id: 'shows', 
-    label: 'TV Shows', 
-    description: 'Browse popular TV series and episodes',
-    color: 'from-slate-900 via-amber-950/20 to-slate-900',
-    accent: '#64748b',
-    screenshot: '/screenshots/favorites.webp'
-  },
-  { 
-    id: 'search', 
-    label: 'Search', 
-    description: 'Find movies instantly with filters and suggestions',
-    color: 'from-slate-900 via-emerald-950/20 to-slate-900',
-    accent: '#64748b',
-    screenshot: '/screenshots/search.webp'
-  },
-  { 
-    id: 'details', 
-    label: 'Movie Details', 
+  {
+    id: 'details',
+    label: 'Movie Details',
     description: 'Everything about the movie in one beautiful view',
     color: 'from-slate-900 via-indigo-950/20 to-slate-900',
-    accent: '#64748b',
+    accent: '#6366f1',
     screenshot: '/screenshots/details.webp'
   },
-  { 
-    id: 'profile', 
-    label: 'Profile', 
-    description: 'Your watchlist, history and settings',
+  {
+    id: 'search',
+    label: 'Search',
+    description: 'Find movies instantly with filters and suggestions',
+    color: 'from-slate-900 via-emerald-950/20 to-slate-900',
+    accent: '#10b981',
+    screenshot: '/screenshots/search.webp'
+  },
+  {
+    id: 'library',
+    label: 'Library',
+    description: 'Your watchlist, history and favorites in one place',
     color: 'from-slate-900 via-violet-950/20 to-slate-900',
-    accent: '#64748b',
-    screenshot: '/screenshots/profile.webp'
+    accent: '#8b5cf6',
+    screenshot: '/screenshots/library.webp'
+  },
+  {
+    id: 'video',
+    label: 'Video Player',
+    description: 'Stream in stunning quality with advanced controls',
+    color: 'from-slate-900 via-red-950/20 to-slate-900',
+    accent: '#ef4444',
+    screenshot: '/screenshots/video.webp'
   },
 ]
 
@@ -69,22 +69,22 @@ export default function InteractivePhoneMockup() {
   const [currentTime, setCurrentTime] = useState(120)
   const [totalTime] = useState(360)
   const [currentDate, setCurrentDate] = useState<string>('')
-  
+
   useEffect(() => {
     // Set current date only on client side to avoid hydration mismatch
-    setCurrentDate(new Date().toLocaleTimeString([], { 
-      hour: '2-digit', 
-      minute: '2-digit' 
+    setCurrentDate(new Date().toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit'
     }))
-    
+
     // Update time every minute
     const interval = setInterval(() => {
-      setCurrentDate(new Date().toLocaleTimeString([], { 
-        hour: '2-digit', 
-        minute: '2-digit' 
+      setCurrentDate(new Date().toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
       }))
     }, 60000)
-    
+
     return () => clearInterval(interval)
   }, [])
 
@@ -112,7 +112,7 @@ export default function InteractivePhoneMockup() {
     if (touchStart - touchEnd > 50) {
       nextScreenshot()
     }
-    
+
     if (touchStart - touchEnd < -50) {
       prevScreenshot()
     }
@@ -140,7 +140,7 @@ export default function InteractivePhoneMockup() {
         nextScreenshot()
       }, 4000)
     }
-    
+
     return () => {
       if (autoplayRef.current) {
         clearInterval(autoplayRef.current)
@@ -170,7 +170,7 @@ export default function InteractivePhoneMockup() {
         setIsFullscreen(false)
       }
     }
-    
+
     window.addEventListener('keydown', handleEscape)
     return () => window.removeEventListener('keydown', handleEscape)
   }, [isFullscreen])
@@ -181,11 +181,11 @@ export default function InteractivePhoneMockup() {
       <div className="relative w-[320px] sm:w-[384px] md:w-[28rem] lg:w-[384px] mx-auto">
         {/* Phone Frame with Glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-[3rem] border-[12px] border-gray-900 shadow-2xl shadow-primary/20" />
-        
+
         {/* Phone Screen */}
         <div className="relative mt-[12px] ml-[12px] w-[calc(100%-24px)] h-[640px] sm:h-[680px] md:h-[700px] lg:h-[720px] bg-black rounded-[2.5rem] overflow-hidden">
           {/* Screenshot Display */}
-          <div 
+          <div
             className="relative w-full h-full overflow-hidden cursor-grab active:cursor-grabbing"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -258,11 +258,11 @@ export default function InteractivePhoneMockup() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         quality={85}
                       />
-                      
+
                       {/* Subtle gradient overlay for better text readability */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                     </div>
-                    
+
                     {/* App Content Overlay for Details Screen */}
                     {currentIndex === 4 && (
                       <div className="absolute inset-0 p-6 flex flex-col justify-between">
@@ -346,14 +346,14 @@ export default function InteractivePhoneMockup() {
                       </div>
                     )}
                   </div>
-                  
+
                   {/* Label Overlay */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="glass-effect rounded-2xl p-5 backdrop-blur-xl border border-white/5 shadow-2xl">
                       <div className="flex items-center justify-between mb-3">
                         <h3 className="font-semibold text-xl tracking-tight">{screenshots[currentIndex].label}</h3>
                         <div className="flex items-center gap-3">
-                          <div 
+                          <div
                             className="w-3 h-3 rounded-full shadow-lg"
                             style={{ backgroundColor: screenshots[currentIndex].accent }}
                           />
@@ -379,14 +379,13 @@ export default function InteractivePhoneMockup() {
                       setIsLoading(true)
                       setCurrentIndex(index)
                     }}
-                    className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-125 ${
-                      index === currentIndex 
-                        ? 'scale-150 shadow-lg' 
+                    className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-125 ${index === currentIndex
+                        ? 'scale-150 shadow-lg'
                         : 'bg-white/40 hover:bg-white/60 hover:shadow-md'
-                    }`}
+                      }`}
                     style={{
-                      backgroundColor: index === currentIndex 
-                        ? screenshots[currentIndex].accent 
+                      backgroundColor: index === currentIndex
+                        ? screenshots[currentIndex].accent
                         : undefined
                     }}
                   />
@@ -406,9 +405,9 @@ export default function InteractivePhoneMockup() {
 
         {/* Phone Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-gray-900 rounded-b-2xl z-10" />
-        
+
         {/* Dynamic Phone Accent */}
-        <div 
+        <div
           className="absolute -inset-1 rounded-[3.5rem] blur-md opacity-20 -z-10"
           style={{ backgroundColor: screenshots[currentIndex].accent }}
         />
@@ -421,7 +420,7 @@ export default function InteractivePhoneMockup() {
         >
           <ChevronLeft className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" />
         </button>
-        
+
         <button
           onClick={nextScreenshot}
           className="absolute -right-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-effect flex items-center justify-center hover:bg-white/15 transition-all duration-500 z-20 group active:scale-95 shadow-xl hover:shadow-2xl"
@@ -444,7 +443,7 @@ export default function InteractivePhoneMockup() {
           <div className="inline-flex flex-col items-center gap-2">
             <div className="text-sm text-text-muted">Currently Viewing</div>
             <div className="flex items-center gap-2">
-              <div 
+              <div
                 className="w-2 h-2 rounded-full animate-pulse"
                 style={{ backgroundColor: screenshots[currentIndex].accent }}
               />
@@ -461,14 +460,14 @@ export default function InteractivePhoneMockup() {
       <AnimatePresence>
         {isFullscreen && (
           <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
-            <button 
+            <button
               className="absolute top-6 right-6 w-12 h-12 rounded-full glass-effect flex items-center justify-center hover:bg-white/10 transition-colors text-xl z-50"
               onClick={() => setIsFullscreen(false)}
               aria-label="Close fullscreen"
             >
               <X className="w-6 h-6" />
             </button>
-            
+
             <div className="max-w-6xl w-full max-h-[90vh]">
               <div className="bg-surface rounded-3xl overflow-hidden border border-white/10">
                 <div className="p-8 h-[85vh] flex flex-col">
@@ -481,7 +480,7 @@ export default function InteractivePhoneMockup() {
                       {screenshots[currentIndex].description}
                     </p>
                   </div>
-                  
+
                   {/* Full-size Screenshot */}
                   <div className="relative flex-1 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10">
                     <Image
@@ -491,12 +490,12 @@ export default function InteractivePhoneMockup() {
                       className="object-contain p-8"
                       quality={100}
                     />
-                    
+
                     {/* Screenshot Info */}
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="glass-effect rounded-xl p-4 backdrop-blur-lg flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div 
+                          <div
                             className="w-4 h-4 rounded-full"
                             style={{ backgroundColor: screenshots[currentIndex].accent }}
                           />
@@ -508,7 +507,7 @@ export default function InteractivePhoneMockup() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Navigation Controls */}
                   <div className="flex justify-between items-center mt-8">
                     <button
@@ -518,7 +517,7 @@ export default function InteractivePhoneMockup() {
                       <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                       Previous
                     </button>
-                    
+
                     <div className="flex gap-3">
                       {screenshots.map((screenshot, index) => (
                         <button
@@ -527,14 +526,13 @@ export default function InteractivePhoneMockup() {
                             setIsLoading(true)
                             setCurrentIndex(index)
                           }}
-                          className={`px-4 py-2 rounded-full transition-all ${
-                            index === currentIndex 
-                              ? 'text-white font-medium' 
+                          className={`px-4 py-2 rounded-full transition-all ${index === currentIndex
+                              ? 'text-white font-medium'
                               : 'text-text-muted hover:text-white'
-                          }`}
+                            }`}
                           style={{
-                            backgroundColor: index === currentIndex 
-                              ? screenshots[currentIndex].accent + '40' 
+                            backgroundColor: index === currentIndex
+                              ? screenshots[currentIndex].accent + '40'
                               : 'transparent'
                           }}
                         >
@@ -542,7 +540,7 @@ export default function InteractivePhoneMockup() {
                         </button>
                       ))}
                     </div>
-                    
+
                     <button
                       onClick={nextScreenshot}
                       className="flex items-center gap-3 px-6 py-3 rounded-full glass-effect hover:bg-white/10 transition-colors group"
@@ -562,14 +560,14 @@ export default function InteractivePhoneMockup() {
       <AnimatePresence>
         {showVideo && (
           <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
-            <button 
+            <button
               className="absolute top-6 right-6 w-12 h-12 rounded-full glass-effect flex items-center justify-center hover:bg-white/10 transition-colors text-xl z-50"
               onClick={() => setShowVideo(false)}
               aria-label="Close video"
             >
               <X className="w-6 h-6" />
             </button>
-            
+
             <div className="max-w-4xl w-full">
               <div className="bg-surface rounded-3xl overflow-hidden border border-white/10 p-8">
                 <h3 className="text-3xl font-bold mb-4 text-center">App Demo Preview</h3>

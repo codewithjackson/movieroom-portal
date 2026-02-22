@@ -13,12 +13,19 @@ export const metadata: Metadata = {
 
 export default function Screenshots() {
   const screenshots = [
-    { id: 'home', title: 'Home Screen', description: 'Browse trending movies and shows' },
-    { id: 'search', title: 'Search', description: 'Find any movie instantly' },
-    { id: 'details', title: 'Movie Details', description: 'View detailed information about movies' },
-    { id: 'player', title: 'Video Player', description: 'Stream in stunning 4K quality' },
-    { id: 'downloads', title: 'Downloads', description: 'Manage offline content' },
-    { id: 'profile', title: 'Profile', description: 'Personalized experience' },
+    { id: 'home', title: 'Home Screen', description: 'Experience our curated movie grid with personalized recommendations.' },
+    { id: 'movies', title: 'Movies Explorer', description: 'Explore a vast library of films across all genres and eras.' },
+    { id: 'details', title: 'Movie Details', description: 'Get rich metadata, trailers, and cast info for every title.' },
+    { id: 'details2', title: 'More Info', description: 'Deep dive into seasons, episodes, and related content.' },
+    { id: 'search', title: 'Smart Search', description: 'Instantly find exactly what you want with our powerful search.' },
+    { id: 'library', title: 'Personal Library', description: 'Organize your movie life with watchlists and history.' },
+    { id: 'library2', title: 'Collection View', description: 'A sleek way to browse your saved and downloaded movies.' },
+    { id: 'favorites', title: 'Favorites', description: 'One tap access to the movies you love the most.' },
+    { id: 'downloads', title: 'Downloads', description: 'Watch anywhere, anytime with full offline support.' },
+    { id: 'video', title: '4K Player', description: 'Stunning visual quality with advanced playback controls.' },
+    { id: 'collection', title: 'Genre Collections', description: 'Discover new titles through our themed movie collections.' },
+    { id: 'profile', title: 'User Profile', description: 'Manage your settings, account, and preferences easily.' },
+    { id: 'selector', title: 'Quick Selector', description: 'Swiftly switch between source qualities and subtitles.' },
   ]
 
   return (
@@ -28,7 +35,7 @@ export default function Screenshots() {
         <p className="text-xl text-center text-text-muted mb-12">
           Take a visual tour of our beautiful app interface
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {screenshots.map((screenshot) => (
             <div key={screenshot.id} className="relative group">
