@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'MovieRoom Premium APK Download - Free Android Movie App | Official Site',
-  description: 'Download MovieRoom Premium APK v1.0.2 - Free Android movie streaming app with 4K quality, offline downloads, and 10M+ happy users. Safe, virus-free, no registration required. Latest version 26MB.',
+  description: 'Download MovieRoom Premium APK v1.0.3 - Free Android movie streaming app with 4K quality, offline downloads, and 10M+ happy users. Safe, virus-free, no registration required. Latest version 26MB.',
   keywords: 'MovieRoom, MovieRoom APK, download MovieRoom, free movie app, Android streaming, movie download, watch movies online, MovieRoom premium, MovieRoom latest version, APK download',
   authors: [{ name: 'MovieRoom Official' }],
   creator: 'MovieRoom Official Team',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://movieroom-portal.vercel.app',
     title: 'MovieRoom Premium APK - Free Android Movie Streaming App',
-    description: 'Download MovieRoom Premium APK v1.0.2 - Stream thousands of movies in 4K quality. Safe, free, no registration required.',
+    description: 'Download MovieRoom Premium APK v1.0.3 - Stream thousands of movies in 1080p, 2K and 4K quality. Safe, free, no registration required.',
     siteName: 'MovieRoom Official',
     images: [
       {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'MovieRoom Premium APK - Free Android Movie App',
-    description: 'Download MovieRoom v1.0.2 - Stream movies in 4K quality. Safe, free, no registration required.',
+    description: 'Download MovieRoom v1.0.3 - Stream movies in 4K quality. Safe, free, no registration required.',
     images: ['/twitter-image.jpg'],
     creator: '@MovieRoomApp',
   },

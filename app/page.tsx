@@ -31,7 +31,7 @@ const jsonLd = {
   downloadUrl: 'https://movieroom-portal.vercel.app/MovieRoom.apk',
   fileFormat: 'application/vnd.android.package-archive',
   fileSize: '26 MB',
-  version: '1.0.2',
+  version: '1.0.3',
   datePublished: '2026-02-22',
   author: {
     '@type': 'Organization',
@@ -46,9 +46,9 @@ const jsonLd = {
 
 export default function Home() {
   const appVersions = [
-    { version: 'v1.0.2', size: '26 MB', date: 'Feb 22, 2026', new: true },
+    { version: 'v1.0.3', size: '26 MB', date: 'Feb 22, 2026', new: true },
+    { version: 'v1.0.2', size: '26 MB', date: 'Feb 22, 2026', new: false },
     { version: 'v1.0.1', size: '25 MB', date: 'Feb 15, 2026', new: false },
-    { version: 'v1.0.0', size: '24 MB', date: 'Feb 01, 2026', new: false },
   ]
 
   const systemRequirements = [
@@ -129,7 +129,7 @@ export default function Home() {
                   className="inline-flex items-center gap-2 px-4 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-full bg-primary/10 border border-primary/20 mb-6 md:mb-8"
                 >
                   <Download className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-primary" />
-                  <span className="text-sm sm:text-sm md:text-base font-medium text-primary">v1.0.2 New Update Available ✨</span>
+                  <span className="text-sm sm:text-sm md:text-base font-medium text-primary">v1.0.3 New Update Available ✨</span>
                 </motion.div>
 
                 {/* Main Heading - Responsive sizes */}
@@ -155,7 +155,7 @@ export default function Home() {
                     className="group inline-flex items-center justify-center gap-2 sm:gap-3 md:gap-4 px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 rounded-xl md:rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-base sm:text-lg md:text-xl hover:shadow-xl md:hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 active:scale-95 w-full sm:w-auto touch-manipulation"
                   >
                     <Download className="w-5 h-5 md:w-6 md:h-6 group-hover:animate-bounce" />
-                    <span>Download MovieRoom v1.0.2</span>
+                    <span>Download MovieRoom v1.0.3</span>
                     <ArrowDown className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-0.5 md:group-hover:translate-y-1 transition-transform" />
                   </a>
                   <p className="text-sm sm:text-base md:text-lg text-text-muted mt-2">
@@ -311,7 +311,7 @@ export default function Home() {
                     <Calendar className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 text-green-500" />
                   </div>
                   <div>
-                    <h2 className="text-lg md:text-xl lg:text-2xl font-bold">What's New in v1.0.2</h2>
+                    <h2 className="text-lg md:text-xl lg:text-2xl font-bold">What's New in v1.0.3</h2>
                     <p className="text-text-muted text-xs md:text-sm">Latest updates and improvements</p>
                   </div>
                 </div>
@@ -400,7 +400,7 @@ export default function Home() {
                     className="inline-flex items-center justify-center gap-1.5 md:gap-2 lg:gap-3 px-4 py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg md:rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:shadow-xl md:hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 active:scale-95 text-sm md:text-base lg:text-lg"
                   >
                     <Download className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />
-                    Download Now (v1.0.2 • 26 MB)
+                    Download Now (v1.0.3 • 26 MB)
                   </a>
                   <p className="text-xs md:text-sm text-text-muted mt-2 md:mt-3 lg:mt-4">
                     Safe & Secure • No Registration Required • Free Forever
