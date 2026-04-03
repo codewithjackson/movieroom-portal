@@ -28,7 +28,7 @@ const jsonLd = {
     bestRating: '5',
     worstRating: '1'
   },
-  downloadUrl: 'https://movieroom-portal.vercel.app/MovieRoom.apk',
+  downloadUrl: 'https://movieroom-portal.vercel.app/Movieroom.apk',
   fileFormat: 'application/vnd.android.package-archive',
   fileSize: '26 MB',
   version: '1.0.3',
@@ -150,8 +150,8 @@ export default function Home() {
                 {/* Main Download Button - Full width on mobile */}
                 <div className="mb-6 md:mb-8">
                   <a
-                    href="/MovieRoom.apk"
-                    download="MovieRoom.apk"
+                    href="/Movieroom.apk"
+                    download="Movieroom.apk"
                     className="group inline-flex items-center justify-center gap-2 sm:gap-3 md:gap-4 px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 rounded-xl md:rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-base sm:text-lg md:text-xl hover:shadow-xl md:hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 active:scale-95 w-full sm:w-auto touch-manipulation"
                   >
                     <Download className="w-5 h-5 md:w-6 md:h-6 group-hover:animate-bounce" />
@@ -247,8 +247,8 @@ export default function Home() {
                   </div>
 
                   <a
-                    href="/MovieRoom.apk"
-                    download="MovieRoom.apk"
+                    href="/Movieroom.apk"
+                    download="Movieroom.apk"
                     className={`w-full py-2 md:py-2.5 lg:py-3 rounded-lg text-center font-medium transition-all text-xs md:text-sm active:scale-95 ${version.new
                       ? 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:shadow-primary/25'
                       : 'bg-white/5 text-text hover:bg-white/10'
@@ -395,8 +395,8 @@ export default function Home() {
                     Get the latest version of MovieRoom now and start streaming your favorite movies in minutes.
                   </p>
                   <a
-                    href="/MovieRoom.apk"
-                    download="MovieRoom.apk"
+                    href="/Movieroom.apk"
+                    download="Movieroom.apk"
                     className="inline-flex items-center justify-center gap-1.5 md:gap-2 lg:gap-3 px-4 py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg md:rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:shadow-xl md:hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 active:scale-95 text-sm md:text-base lg:text-lg"
                   >
                     <Download className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />

@@ -230,8 +230,8 @@ const Footer = () => {
         {/* App Badges */}
         <div className="flex justify-center gap-4 mt-8">
           <a
-            href="/MovieRoom.apk"
-            download="MovieRoom.apk"
+            href="/Movieroom.apk"
+            download="Movieroom.apk"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group"
           >
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">

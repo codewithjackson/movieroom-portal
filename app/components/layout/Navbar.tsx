@@ -183,8 +183,8 @@ const Navbar = () => {
                           {downloadVersions.map((version, index) => (
                             <a
                               key={index}
-                              href="/MovieRoom.apk"
-                              download="MovieRoom.apk"
+                              href="/Movieroom.apk"
+                              download="Movieroom.apk"
                               className={`flex items-center justify-between p-3 rounded-lg transition-all ${version.highlight
                                 ? 'bg-gradient-to-r from-primary/20 to-secondary/20'
                                 : 'hover:bg-white/10'
@@ -339,8 +339,8 @@ const Navbar = () => {
                 <div className="mb-4">
                   <h3 className="font-bold text-white mb-3">Download Latest Version</h3>
                   <a
-                    href="/MovieRoom.apk"
-                    download="MovieRoom.apk"
+                    href="/Movieroom.apk"
+                    download="Movieroom.apk"
                     onClick={() => setIsOpen(false)}
                     className="flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:shadow-lg hover:shadow-primary/25 transition-all"
                   >
@@ -358,8 +358,8 @@ const Navbar = () => {
                   {downloadVersions.slice(1).map((version, index) => (
                     <a
                       key={index}
-                      href="/MovieRoom.apk"
-                      download="MovieRoom.apk"
+                      href="/Movieroom.apk"
+                      download="Movieroom.apk"
                       onClick={() => setIsOpen(false)}
                       className="flex items-center justify-between px-4 py-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
                     >
