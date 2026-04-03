@@ -135,7 +135,7 @@ export default function DownloadButton() {
   }
 
   const versions: VersionType[] = [
-    { id: 'v2.0', label: 'Latest Version', size: '42 MB', recommended: true },
+    { id: 'v2.0', label: 'Latest Version', size: '28 MB', recommended: true },
     { id: 'v1.9', label: 'Previous Version', size: '38 MB', recommended: false },
     { id: 'lite', label: 'Lite Version', size: '24 MB', recommended: false },
   ]
@@ -253,7 +253,7 @@ export default function DownloadButton() {
                 )}
               </div>
               <div className="text-sm text-white/80 flex items-center gap-2">
-                <span>{isDownloading ? `${progress.toFixed(0)}%` : 'v2.0 • 26 MB'}</span>
+                <span>{isDownloading ? `${progress.toFixed(0)}%` : 'v2.0 • 28 MB'}</span>
                 <span className="text-xs px-2 py-0.5 bg-white/20 rounded-full">
                   {downloadCount.toLocaleString()} downloads
                 </span>

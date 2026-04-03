@@ -30,7 +30,7 @@ const jsonLd = {
   },
   downloadUrl: 'https://movieroom-portal.vercel.app/Movieroom.apk',
   fileFormat: 'application/vnd.android.package-archive',
-  fileSize: '26 MB',
+  fileSize: '28 MB',
   version: '1.0.3',
   datePublished: '2026-02-22',
   author: {
@@ -46,7 +46,7 @@ const jsonLd = {
 
 export default function Home() {
   const appVersions = [
-    { version: 'v1.0.3', size: '26 MB', date: 'Feb 22, 2026', new: true },
+    { version: 'v1.0.3', size: '28 MB', date: 'Feb 22, 2026', new: true },
     { version: 'v1.0.2', size: '26 MB', date: 'Feb 22, 2026', new: false },
     { version: 'v1.0.1', size: '25 MB', date: 'Feb 15, 2026', new: false },
   ]
@@ -159,7 +159,7 @@ export default function Home() {
                     <ArrowDown className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-0.5 md:group-hover:translate-y-1 transition-transform" />
                   </a>
                   <p className="text-sm sm:text-base md:text-lg text-text-muted mt-2">
-                    26 MB • Latest Version • Android 8.0+
+                    28 MB • Latest Version • Android 8.0+
                   </p>
                 </div>
 
@@ -400,7 +400,7 @@ export default function Home() {
                     className="inline-flex items-center justify-center gap-1.5 md:gap-2 lg:gap-3 px-4 py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg md:rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:shadow-xl md:hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 active:scale-95 text-sm md:text-base lg:text-lg"
                   >
                     <Download className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />
-                    Download Now (v1.0.3 • 26 MB)
+                    Download Now (v1.0.3 • 28 MB)
                   </a>
                   <p className="text-xs md:text-sm text-text-muted mt-2 md:mt-3 lg:mt-4">
                     Safe & Secure • No Registration Required • Free Forever
