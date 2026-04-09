@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/react"
 import WhatsAppInvite from '@/app/components/ui/WhatsAppInvite'
+import SocialBar from '@/app/components/ads/SocialBar'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -110,6 +111,7 @@ export default function RootLayout({
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
         </div>
         <WhatsAppInvite />
+        <SocialBar />
       </body>
     </html>
   )
